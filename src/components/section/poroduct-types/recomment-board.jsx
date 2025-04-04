@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { Link } from "react-router";
-import { Elipse } from "./svgIcon/elipse";
+import { Elipse } from "../../svgIcon/elipse";
 import { useState } from "react";
 
 const advertiseData = [
@@ -9,17 +9,33 @@ const advertiseData = [
     itemInfo: "Up to 10% off Voucher",
     advertiseImage: "phon.png",
   },
-  {title: "iPhone 13 Series", itemInfo:"Up to 10% off Voucher", advertiseImage: "phon.png"},
-  {title: "iPhone 12 Series", itemInfo:"Up to 10% off Voucher", advertiseImage: "phon.png"},
-  {title: "iPhone 11 Series", itemInfo:"Up to 10% off Voucher", advertiseImage: "phon.png"},
-  {title: "iPhone 10 Series", itemInfo:"Up to 10% off Voucher", advertiseImage: "phon.png"}
+  {
+    title: "iPhone 13 Series",
+    itemInfo: "Up to 10% off Voucher",
+    advertiseImage: "phon.png",
+  },
+  {
+    title: "iPhone 12 Series",
+    itemInfo: "Up to 10% off Voucher",
+    advertiseImage: "phon.png",
+  },
+  {
+    title: "iPhone 11 Series",
+    itemInfo: "Up to 10% off Voucher",
+    advertiseImage: "phon.png",
+  },
+  {
+    title: "iPhone 10 Series",
+    itemInfo: "Up to 10% off Voucher",
+    advertiseImage: "phon.png",
+  },
 ];
 
-export function AdvertiseBoard({ className }) {
-  const [indexCurrentItem, setIndexCurrentitem] = useState(0)
+export function RecommendBoard({ className }) {
+  const [indexCurrentItem, setIndexCurrentitem] = useState(0);
 
-  const currentElement = advertiseData[indexCurrentItem]
-  
+  const currentElement = advertiseData[indexCurrentItem];
+
   return (
     <div
       className={clsx(
@@ -55,11 +71,22 @@ export function AdvertiseBoard({ className }) {
         </Link>
       </div>
       <div className="relative min-w-[496px] h-[352px] overflow-hidden">
-        <img src={currentElement.advertiseImage} className="absolute top-4"></img>
+        <img
+          src={currentElement.advertiseImage}
+          className="absolute top-4"
+        ></img>
       </div>
       <div className="flex absolute bottom-3 left-1/2 transform -translate-x-1/2 gap-3">
         {advertiseData.map((value, index) => {
-          return <Elipse key={index} type={index === indexCurrentItem ? "pick" : "df"} onClick={() => setIndexCurrentitem(index)}/>;
+          return (
+            <Elipse
+              key={index}
+              type={index === indexCurrentItem ? "pick" : "df"}
+              height={index === indexCurrentItem ? "14" : "12"}
+              width={index === indexCurrentItem ? "14" : "12"}
+              onClick={() => setIndexCurrentitem(index)}
+            />
+          );
         })}
       </div>
     </div>

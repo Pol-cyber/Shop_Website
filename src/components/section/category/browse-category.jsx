@@ -33,11 +33,10 @@ const categoryList = [
   },
 ];
 
-const itemsPerSlide = 6;
 
-export function BrowseCategory() {
+export function BrowseCategory({itemsPerLine}) {
   const { indexCurrentElement, moveList } = useIterateList(
-    itemsPerSlide,
+    itemsPerLine,
     categoryList
   );
 
@@ -52,7 +51,7 @@ export function BrowseCategory() {
         className={"mt-[60px]"}
         indexCurrentElement={indexCurrentElement}
         category={categoryList}
-        itemsPerSlide={itemsPerSlide}
+        itemsPerLine={itemsPerLine}
       ></CategoryCardGrid>
     </div>
   );

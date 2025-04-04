@@ -1,12 +1,32 @@
+import { useState } from "react";
+import { Elipse } from "../../svgIcon/elipse";
+
 export function SalesCard({ cardInfo }) {
+  const [currentImageIndex, setCurrentImage] = useState(0);
+
+  function setNewImage(index) {
+    setCurrentImage(index);
+  }
+
   return (
     <div className="flex justify-center items-start flex-col gap-4">
       <div className="w-full group h-[250px] bg-[#F5F5F5] flex items-center justify-center relative">
-        <div className="text-[#FAFAFA] rounded-[4px] text-center w-[55px] h-[26px] absolute top-3 left-3 bg-[#DB4444]">
-          {`-${cardInfo.discount}%`}
-        </div>
+        {(cardInfo.discount || cardInfo.isNew) && (
+          <div className="text-[#FAFAFA] absolute top-3 left-3 flex gap-2">
+            {cardInfo.isNew && (
+              <div className="rounded-[4px] text-center w-[55px] h-[26px] bg-green-400">
+                NEW
+              </div>
+            )}
+            {cardInfo.discount && (
+              <div className="rounded-[4px] text-center w-[55px] h-[26px] bg-[#DB4444]">
+                {`-${cardInfo.discount}%`}
+              </div>
+            )}
+          </div>
+        )}
         <img
-          src={cardInfo.image}
+          src={cardInfo.images.at(currentImageIndex)}
           className="w-[65%] h-[61%] max-w-[212px] max-h-[192px]"
         ></img>
         <div className="w-[34px] h-[76px] flex flex-col gap-2 absolute top-3 right-3">
@@ -91,6 +111,26 @@ export function SalesCard({ cardInfo }) {
             })}
           <span>{`(${cardInfo.countRaters})`}</span>
         </div>
+        {cardInfo.images?.length >= 2 && (
+          <div className="flex gap-2">
+            {Array(cardInfo.images.slice(0, 3).length)
+              .fill(null)
+              .map((value, index) => {
+                const isPoint = currentImageIndex === index
+                return (
+                  <Elipse
+                    type={isPoint ? "pick" : "df"}
+                    fillColor={isPoint ? "red" : "red"}
+                    strokeColor={isPoint ? "black" : "red"}
+                    height={isPoint ? "22" : "20"} 
+                    width={isPoint ? "22" : "20"}
+                    onClick={() => setNewImage(index)}
+                    key={index}
+                  ></Elipse>
+                );
+              })}
+          </div>
+        )}
       </div>
     </div>
   );

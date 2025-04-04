@@ -1,6 +1,7 @@
 import { TwoElipse } from "../svgIcon/two-elipse";
+import { UiButtonLink } from "../uikit/ui-button-link";
 
-export function SectionHeader({timeData, moveList, title, topTitle}) {
+export function SectionHeader({timeData, moveList, title, topTitle, link, linkText}) {
 
     
   const timeKeys = timeData && Object.keys(timeData);
@@ -73,6 +74,7 @@ export function SectionHeader({timeData, moveList, title, topTitle}) {
           </svg>
         </div>
       </div>}
+      {link && <UiButtonLink text={linkText} link={link}></UiButtonLink>}
     </div>
   );
 }

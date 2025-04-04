@@ -1,7 +1,7 @@
-import { SalesCardGrid } from "./sales-card-grid";
-import { UiButton } from "../../uikit/ui-button";
-import { SectionHeader } from "../section-header";
-import { useIterateList } from "../../model/use-iterate-list";
+import { SalesCardGrid } from "../sales-card-grid";
+import { UiButtonLink } from "../../../uikit/ui-button-link";
+import { SectionHeader } from "../../section-header";
+import { useIterateList } from "../../../model/use-iterate-list";
 
 const timeData = {
   Days: 3,
@@ -13,7 +13,7 @@ const timeData = {
 const saleCards = [
   {
     name: "HAVIT HV-G92 Gamepad",
-    image: "stick.png",
+    images: ["stick.png"],
     salePrice: "120",
     defaultPrice: "160",
     rating: "4.77",
@@ -22,7 +22,7 @@ const saleCards = [
   },
   {
     name: "AK-900 Wired Keyboard",
-    image: "keyboard.png",
+    images: ["keyboard.png"],
     salePrice: "960",
     defaultPrice: "1160",
     rating: "4.44",
@@ -31,7 +31,7 @@ const saleCards = [
   },
   {
     name: "Hello",
-    image: "stick.png",
+    images: ["stick.png"],
     salePrice: "120",
     defaultPrice: "160",
     rating: "4.77",
@@ -40,7 +40,7 @@ const saleCards = [
   },
   {
     name: "Hello",
-    image: "stick.png",
+    images: ["stick.png"],
     salePrice: "120",
     defaultPrice: "160",
     rating: "4.77",
@@ -49,7 +49,7 @@ const saleCards = [
   },
   {
     name: "Hello",
-    image: "stick.png",
+    images: ["stick.png"],
     salePrice: "120",
     defaultPrice: "160",
     rating: "4.77",
@@ -58,7 +58,7 @@ const saleCards = [
   },
   {
     name: "Hello",
-    image: "stick.png",
+    images: ["stick.png"],
     salePrice: "120",
     defaultPrice: "160",
     rating: "4.77",
@@ -67,7 +67,7 @@ const saleCards = [
   },
   {
     name: "Hello",
-    image: "stick.png",
+    images: ["stick.png"],
     salePrice: "120",
     defaultPrice: "160",
     rating: "4.77",
@@ -76,10 +76,9 @@ const saleCards = [
   },
 ];
 
-const itemsPerSlide = 4;
 
-export function HotSales() {
-  const {indexCurrentElement, moveList} = useIterateList(itemsPerSlide, saleCards)
+export function HotDiscount({itemsPerLine}) {
+  const {indexCurrentElement, moveList} = useIterateList(itemsPerLine, saleCards)
 
   return (
     <div>
@@ -93,10 +92,10 @@ export function HotSales() {
         <SalesCardGrid
           indexCurrentElement={indexCurrentElement}
           saleCard={saleCards}
-          itemsPerSlide={itemsPerSlide}
+          itemsPerLine={itemsPerLine}
         ></SalesCardGrid>
         <div className="flex justify-center mt-[64px]">
-          <UiButton text="View All Products"></UiButton>
+          <UiButtonLink text="View All Products" link="saleProduct"></UiButtonLink>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
-import { AdvertiseBoard } from "./advertise-board";
-import { DropLeft } from "./svgIcon/dop-right";
+import { RecommendBoard } from "./recomment-board";
+import { DropLeft } from "../../svgIcon/dop-right";
 
 const listCategory = [
   { name: "Woman’s Fashion", children: "hs" },
@@ -13,9 +13,9 @@ const listCategory = [
   { name: "Health & Beauty" },
 ];
 
-export function ProductCategories() {
+export function ProductTypes() {
   return (
-    <div className="w-screen px-[135px] pb-10 flex">
+    <div className="pb-10 flex">
       <div className="pt-10 mr-4">
         <ul className="w-[217px]">
           {listCategory.map((value, index) => {
@@ -29,7 +29,7 @@ export function ProductCategories() {
         </ul>
       </div>
       <div className="w-[1px] bg-black/30"></div>
-      <AdvertiseBoard className="mt-10 ml-11"></AdvertiseBoard>
+      <RecommendBoard className="mt-10 ml-11"></RecommendBoard>
     </div>
   );
 }

@@ -2,13 +2,12 @@ import { Link } from "react-router";
 import { ShopFooter } from "../components/layout/footer/shop-footer";
 import { ShopHeader } from "../components/layout/header/shop-header";
 import { Breadcrumbs } from "../components/uikit/ui-breadcrumbs";
-import { UiButton } from "../components/uikit/ui-button";
+import { UiButtonLink } from "../components/uikit/ui-button-link";
 
 export function ErrorPage() {
   return (
-    <div className="min-h-screen w-full overflow-hidden flex flex-col">
-      <ShopHeader></ShopHeader>
-      <div className=" w-full flex-grow flex-col">
+    <div className="min-h-[696px] w-full overflow-hidden flex flex-col">
+      <div className="w-full flex-grow flex-col">
         <div className="ml-[135px] mt-[80px]">
           <Breadcrumbs errorPage></Breadcrumbs>
         </div>
@@ -21,12 +20,13 @@ export function ErrorPage() {
               Your visited page not found. You may go home page.
             </span>
           </div>
-          <Link to={"/"} className="mt-20 mx-auto">
-            <UiButton text="Back to home page"></UiButton>
-          </Link>
+          <UiButtonLink
+            className="mt-20 mx-auto"
+            text="Back to home page"
+            link=""
+          ></UiButtonLink>
         </div>
       </div>
-      <ShopFooter></ShopFooter>
     </div>
   );
 }

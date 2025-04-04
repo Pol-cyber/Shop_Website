@@ -8,16 +8,17 @@ export function MainHeader({currentPath}) {
         <div className="py-2 flex items-center justify-between w-full">
           <span className="text-black font-bold text-[28px] leading-6">Exclusive</span>
           <nav className="flex text-[18px] gap-12 item">
-            <Link className={clsx({"border-b border-b-black": currentPath === "/"})}>Home</Link>
-            <Link>Contact</Link>
-            <Link>About</Link>
-            <Link>Sign Up</Link>
+            <Link className={clsx({"border-b border-b-black": currentPath === "/"})} to="">Home</Link>
+            <Link className={clsx({"border-b border-b-black": currentPath === "/contact"})} to="/contact">Contact</Link>
+            <Link className={clsx({"border-b border-b-black": currentPath === "/about"})} to="/about">About</Link>
+            <Link className={clsx({"border-b border-b-black": currentPath === "/register"})} to="/register">Sign Up</Link>
+            <Link className={clsx({"border-b border-b-black": currentPath === "/login"})} to="/login">Log In</Link>
           </nav>
         </div>
         <div className="flex gap-6 items-center">
           <div className="relative">
             <input
-              className="text-xs pl-[20px] pr-[70px] py-2 bg-[#F5F5F5]"
+              className="text-xs pl-[20px] pr-[70px] py-3 rounded-[4px] bg-[#F5F5F5]"
               placeholder="What are you looking for?"
             ></input>
             <svg
