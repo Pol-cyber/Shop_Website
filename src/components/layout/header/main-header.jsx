@@ -18,7 +18,7 @@ export function MainHeader({currentPath}) {
         <div className="flex gap-6 items-center">
           <div className="relative">
             <input
-              className="text-xs pl-[20px] pr-[70px] py-3 rounded-[4px] bg-[#F5F5F5]"
+              className="text-xs pl-[20px] pr-[70px] py-3 rounded-[4px] bg-[#F5F5F5] focus:outline-none"
               placeholder="What are you looking for?"
             ></input>
             <svg

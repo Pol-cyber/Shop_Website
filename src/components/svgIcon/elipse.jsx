@@ -12,7 +12,7 @@ export function Elipse({ type, onClick, fillColor, strokeColor, width = 12, heig
   return <ElipseType onClick={onClick} fillColor={fillColor} strokeColor={strokeColor} width={width} height={height}/>;
 }
 
-function DefaultElipse({ onClick, fillColor = "white", strokeColor="white", width, height }) {
+function DefaultElipse({ onClick, fillColor = "#9e9797", strokeColor="#9e9797", width, height }) {
   return (
     <svg width={width} height={height} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={onClick}>
       <circle opacity="0.5" cx="6" cy="6" r="5" stroke={strokeColor} fill={fillColor} />

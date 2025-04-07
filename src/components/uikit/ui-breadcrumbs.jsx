@@ -32,7 +32,7 @@ export function Breadcrumbs({ errorPage, className }) {
                   to={to}
                   className={isLast ? "font-semibold" : "hover:text-black"}
                 >
-                  {part}
+                  {part.charAt(0).toUpperCase() + part.slice(1)}
                 </Link>
               </span>
             </React.Fragment>

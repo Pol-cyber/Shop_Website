@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router";
-import { MainPage } from "../pages/main-page";
+import { MainPage } from "../pages/main";
 import App from "../App";
 import { ErrorPage } from "../pages/error-page";
 import { AuthPage } from "../pages/auth-page";
 import { loginField, registerField } from "../constants/auth-constants";
-import { AboutPage } from "../pages/about-page";
+import { AboutPage } from "../pages/about";
 
 
 export const router = createBrowserRouter([

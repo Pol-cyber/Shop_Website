@@ -9,7 +9,7 @@ export function ShopFooter() {
             <span>Get 10% off your first order</span>
             <div className="relative">
               <input
-                className="pl-[16px] pr-[70px] py-3 bg-black border rounded-[4px] border-white"
+                className="pl-[16px] pr-[70px] py-3 bg-black border rounded-[4px] border-white focus:outline-none"
                 placeholder="Enter your email"
               ></input>
               <svg
