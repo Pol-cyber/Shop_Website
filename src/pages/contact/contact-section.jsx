@@ -20,7 +20,7 @@ function FormSendMessage(){
                 <input name="email" className="flex-grow bg-[#F5F5F5] p-4" placeholder="Your Email" required></input>
                 <input name="phone" className="flex-grow bg-[#F5F5F5] p-4" placeholder="Your Phone" required></input>
             </div>
-            <textarea className="bg-[#F5F5F5] max-h-[210px] w-full p-4 resize-none" name="message" placeholder="Your Massage"></textarea>
+            <textarea className="bg-[#F5F5F5] flex-grow max-h-[210px] w-full p-4 resize-none" name="message" placeholder="Your Massage"></textarea>
             <div className="flex justify-end">
                 <button type="submit" className="px-12 py-4 cursor-pointer bg-[#DB4444] text-white rounded-[4px]">Send Massage</button>
             </div>
