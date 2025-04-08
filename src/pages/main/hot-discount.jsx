@@ -2,13 +2,11 @@ import { SalesCardGrid } from "../../components/section/shopCards/sales-card-gri
 import { UiButtonLink } from "../../components/uikit/ui-button-link";
 import { SectionHeader } from "../../components/section/section-header";
 import { useIterateList } from "../../components/model/use-iterate-list";
+import { useMyTimer } from "../../components/model/use-mytimer";
 
-const timeData = {
-  Days: 3,
-  Hours: 23,
-  Minutes: 19,
-  Seconds: 56,
-};
+const saleDuration = {
+  endDate: 1744809638639
+}
 
 const saleCards = [
   {
@@ -79,14 +77,19 @@ const saleCards = [
 
 export function HotDiscount({itemsPerLine}) {
   const {indexCurrentElement, moveList} = useIterateList(itemsPerLine, saleCards)
+  const {duration, timeData} = useMyTimer(saleDuration.endDate)
+
+  if(duration <= 0){
+    return
+  }
 
   return (
     <div>
       <SectionHeader
-        timeData={timeData}
         moveList={moveList}
         title="Flash Sales"
         topTitle="Today’s"
+        timeData={timeData}
       ></SectionHeader>
       <div className="mt-7">
         <SalesCardGrid

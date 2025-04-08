@@ -6,7 +6,9 @@ export function MainHeader({currentPath}) {
     <div>
       <div className="pt-10 pb-4 px-[135px] flex gap-[135px] border-b border-b-black/30">
         <div className="py-2 flex items-center justify-between w-full">
-          <span className="text-black font-bold text-[28px] leading-6">Exclusive</span>
+          <Link to="">
+            <span className="text-black font-bold text-[28px] leading-6">Exclusive</span>
+          </Link>
           <nav className="flex text-[18px] gap-12 item">
             <Link className={clsx({"border-b border-b-black": currentPath === "/"})} to="">Home</Link>
             <Link className={clsx({"border-b border-b-black": currentPath === "/contact"})} to="/contact">Contact</Link>

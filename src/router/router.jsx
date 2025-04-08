@@ -5,6 +5,7 @@ import { ErrorPage } from "../pages/error-page";
 import { AuthPage } from "../pages/auth-page";
 import { loginField, registerField } from "../constants/auth-constants";
 import { AboutPage } from "../pages/about";
+import { ContactAsPage } from "../pages/contact/contact-us";
 
 
 export const router = createBrowserRouter([
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
             {
                 path:"about",
                 element: <AboutPage></AboutPage>
+            },
+            {
+                path:"contact",
+                element: <ContactAsPage/>
             },
             {
                 path: "*",

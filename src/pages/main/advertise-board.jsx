@@ -1,19 +1,23 @@
+import { useMyTimer } from "../../components/model/use-mytimer";
 import { UiButtonLink } from "../../components/uikit/ui-button-link";
 
-const timeData = {
-  Days: 3,
-  Hours: 23,
-  Minutes: 19,
-  Seconds: 56,
-};
+const saleDuration = {
+  endDate: 1744509638639
+}
+
 
 export function AdvertiseBoard() {
+  const {duration, timeData} = useMyTimer(saleDuration.endDate)
+
+  if(duration <= 0){
+    return
+  }
+
   const timeKeys = timeData && Object.keys(timeData);
 
   return (
     <div className="relative">
       <div className="bg-black flex px-11 py-10 gap-7 items-center">
-        {/* Блок із текстом (40%) */}
         <div className="flex flex-col pl-2 py-5 text-green-400 flex-[4] gap-10 justify-between">
           <div className="flex flex-col justify-start gap-8">
             <span className="font-semibold">Categories</span>
@@ -57,7 +61,6 @@ export function AdvertiseBoard() {
           </div>
         </div>
 
-        {/* Блок із зображенням (60%) */}
         <div className="px-4 py-11 flex h-[420px] items-center justify-end flex-[6]">
           <img className="max-w-[700px] w-[96%] z-10" src="bussAdv.png" />
         </div>
